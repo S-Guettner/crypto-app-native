@@ -1,6 +1,7 @@
 import { Text, View , SafeAreaView} from "react-native"
 import {Link} from "expo-router"
 import { useEffect , useState} from "react"
+import CryptoCard from "../components/CryptoCard"
 
 
 export default function Page() {
@@ -15,13 +16,13 @@ export default function Page() {
       console.log(data.gecko_says)
       data.gecko_says ? setServerPing(true) : setServerPing(false)
     })
-    /* .then(fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en')
+    .then(fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=10&page=1&sparkline=false&locale=en')
           .then(res => res.json())
           .then(data => {
             console.log(data)
             setCoinData(data)
           })
-    ) */
+    )
   },[])
 
   
@@ -32,7 +33,11 @@ export default function Page() {
         <Text >This is the first page of your app.</Text>
         <Link className="border-2 p-2 " href='/details'>details</Link>
         <Text>server online: {`${serverPing}`}</Text>
-        
+        {coinData?.map((item) => {
+          return (
+            <CryptoCard />
+          )
+        })}
       </SafeAreaView>
     
   )

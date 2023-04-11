@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View , SafeAreaView} from "react-native";
+import { Text, View , SafeAreaView} from "react-native";
 import {Link} from "expo-router"
 
 const details = () => {
@@ -8,7 +8,7 @@ const details = () => {
             <Link href='/'>Home</Link>
         </SafeAreaView >
 
-     );
+     )
 }
  
-export default details;
+export default details

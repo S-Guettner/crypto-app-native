@@ -1,8 +1,15 @@
 import { Text, View , SafeAreaView} from "react-native"
 
-const CryptoCard = () => {
+const CryptoCard = ({price,volume}) => {
     return ( 
-        <Text>CryptoCard</Text>
+        <View>
+            <Text>CryptoCard</Text>
+
+            <Text>image</Text>
+            <Text>Price</Text>
+            <Text>Volume</Text>
+
+        </View>
      )
 }
  
